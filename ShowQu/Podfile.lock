@@ -1,0 +1,15 @@
+PODS:
+  - MJExtension (3.0.15.1)
+  - ReactiveObjC (3.1.0)
+
+DEPENDENCIES:
+  - MJExtension
+  - ReactiveObjC
+
+SPEC CHECKSUMS:
+  MJExtension: 19bc33ce2eee2d319760f5622562cf581a6ff756
+  ReactiveObjC: 2a38ea15335de4119d8b17caf1db1484f61db902
+
+PODFILE CHECKSUM: 26b5e01431920a61a7131db74ffa60c2a679de28
+
+COCOAPODS: 1.4.0.beta.2

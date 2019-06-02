@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="AZPLoginView">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="login_shouqu" translatesAutoresizingMaskIntoConstraints="NO" id="Qs1-XG-d57">
+                    <rect key="frame" x="179" y="239" width="17" height="178"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="178" id="De6-xK-MgN"/>
+                        <constraint firstAttribute="width" constant="17" id="fWA-lj-dYL"/>
+                    </constraints>
+                </imageView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="K83-Ks-jyq">
+                    <rect key="frame" x="162.5" y="467" width="50" height="50"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="50" id="2g8-hy-GUV"/>
+                        <constraint firstAttribute="height" constant="50" id="AkZ-TB-BMP"/>
+                    </constraints>
+                    <state key="normal" title="Button" image="login_button"/>
+                </button>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="Qs1-XG-d57" firstAttribute="centerX" secondItem="K83-Ks-jyq" secondAttribute="centerX" id="DJ6-aF-EEq"/>
+                <constraint firstItem="K83-Ks-jyq" firstAttribute="top" secondItem="Qs1-XG-d57" secondAttribute="bottom" constant="50" id="jjv-90-lj7"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="K83-Ks-jyq" secondAttribute="bottom" constant="150" id="rar-AA-9cG"/>
+                <constraint firstItem="K83-Ks-jyq" firstAttribute="centerX" secondItem="vUN-kp-3ea" secondAttribute="centerX" id="u4U-Wa-9rR"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <connections>
+                <outlet property="loginBtn" destination="K83-Ks-jyq" id="zsR-D1-6qe"/>
+            </connections>
+            <point key="canvasLocation" x="100" y="53.523238380809602"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="login_button" width="132" height="132"/>
+        <image name="login_shouqu" width="45" height="495"/>
+    </resources>
+</document>

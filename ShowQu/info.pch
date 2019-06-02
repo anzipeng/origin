@@ -1,0 +1,181 @@
+//
+//  info.pch
+//  ShowQu
+//
+//  Created by Bx on 2019/5/27.
+//  Copyright © 2019 bx. All rights reserved.
+//
+
+#ifndef info_pch
+#define info_pch
+#import "ReactiveObjC.h"
+
+/// 通知
+//引导页加载完成通知
+#define WelcomPageCompleteNotifaction @"WelcomPageCompleteNotifaction"
+
+// USerDefault
+#define UserDefault  [NSUserDefaults standardUserDefaults]
+//机型
+#define IS_IPHONE (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone)
+#define IS_IPAD (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)
+#define IS_IPOD ([[[UIDevice currentDevice] model] isEqualToString:@"iPod touch"])
+//屏幕宽高
+#define kScreenWidth            ([[UIScreen mainScreen] bounds].size.width)
+#define kScreenHeight            ([[UIScreen mainScreen] bounds].size.height)
+//屏幕适配
+#define  isIphoneX_XS    (kScreenWidth ==375.f&& kScreenHeight ==812.f? YES : NO)
+#define  isIphoneXR_XSMax    (kScreenWidth ==414.f&& kScreenHeight ==896.f? YES : NO)
+#define  isFullScreen    (isIphoneX_XS || isIphoneXR_XSMax)
+#define  StatusBarHeight    (isFullScreen ?44.f:20.f)
+#define  NavigationBarHeight  44.f
+#define  TabbarHeight        (isFullScreen ? (49.f+34.f) :49.f)
+#define  TabbarSafeBottomHeight        (isFullScreen ?34.f:0.f)
+#define  StatusBarAndNavigationBarHeight  (isFullScreen ?88.f:64.f)
+//系统版本
+#define IOS_SYSTEM_STRING [[UIDevice currentDevice] systemVersion]
+#define IOS11_OR_LATER ([[[UIDevice currentDevice] systemVersion] floatValue] >= 11.0)
+#define IOS10_OR_LATER ([[[UIDevice currentDevice] systemVersion] floatValue] >= 10.0)
+#define IOS9_OR_LATER  ([[[UIDevice currentDevice] systemVersion] floatValue] >= 9.0)
+#define IOS8_OR_LATER  ([[[UIDevice currentDevice] systemVersion] floatValue] >= 8.0)
+#define IOS7_OR_LATER  ([[[UIDevice currentDevice] systemVersion] floatValue] >= 7.0)
+//颜色
+#define HSVCOLOR(h,s,v) [UIColor colorWithHue:h saturation:s value:v alpha:1]
+#define HSVACOLOR(h,s,v,a) [UIColor colorWithHue:h saturation:s value:v alpha:a]
+//颜色转换
+#define UIColorFromRGB(rgbValue) [UIColor \
+colorWithRed:((float)((rgbValue & 0xFF0000) >> 16))/255.0 \
+green:((float)((rgbValue & 0xFF00) >> 8))/255.0 \
+blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
+//图片设置
+#define ImageNamed(imageName) [UIImage imageNamed:[NSString stringWithFormat:@"%@",imageName]]
+// 常用正则
+#define NUM @"0123456789"
+#define ALPHA @"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz"
+#define ALPHANUM @"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789"
+/** 验证手机号及固话方法 */
+#define TelephoneNUM  @"^(0[0-9]{2,3})?([2-9][0-9]{6,7})+(-[0-9]{1,4})?$|(^(13[0-9]|15[0|3|6|7|8|9]|18[8|9])\\d{8}$)"
+/** 判断社会信用代码证 */
+#define SocialCreditNUM  @"^([0-9ABCDEFGHJKLMNPQRTUWXY]{2})([0-9]{6})([0-9ABCDEFGHJKLMNPQRTUWXY]{9})([0-9Y])$"
+/** 工商税号 */
+#define BusinessCirclesNUM  @"[0-9]\\\\d{13}([0-9]|X)$"
+/** 邮政编码 */
+#define CodeNUM  @"^[0-8]\\\\d{5}(?!\\\\d)$"
+/** 验证身份证号（15位或18位数字) */
+#define IDCardNUM  @"\\d{14}[[0-9],0-9xX]"
+/** 验证Email地址 */
+#define EmailNUM  @"^\\w+([-+.]\\w+)*@\\w+([-.]\\w+)*\.\\w+([-.]\\w+)*$"
+/** 整数或者小数 */
+#define IntAndDecimalNUM  @"^[0-9]+([.]{0,1}[0-9]+){0,1}$"
+/** 验证URL */
+#define URLNUM  @"^http://([\\w-]+\.)+[\\w-]+(/[\\w-./?%&=]*)?$"
+/** 验证QQ */
+#define QQNUM  @"[1-9][0-9]\{4,\}"
+/** 匹配帐号是否合法 */
+#define AccountLegalityNUM  @"^[a-zA-Z][a-zA-Z0-9_]{4,15}$"
+/** 只能输入汉字 */
+#define ChineseCharactersNUM  @"^[\u4e00-\u9fa5]{0,}$"
+/** 匹配空白行的正则表达式 */
+#define SpaceNUM  @"^\n\s*\r"
+
+//打印 NSlog
+#ifdef DEBUG
+#   define DLog(fmt, ...) NSLog((@"%s [Line %d] " fmt), __PRETTY_FUNCTION__, __LINE__, ##__VA_ARGS__);
+#else
+#   define DLog(...)
+
+//弹出提示框 UIAlertView
+#define showMessageView(__MESSAGE__) \
+UIAlertView *alertView_ = [[UIAlertView alloc] initWithTitle:@"提示" \
+message:__MESSAGE__ \
+delegate:nil \
+cancelButtonTitle:@"确定" \
+otherButtonTitles:nil]; \
+[alertView_ show];
+
+//弹出提示框 UIAlertController
+#define showMessageController(MESSAGE,VC) \
+UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"提示" message:MESSAGE preferredStyle:UIAlertControllerStyleAlert]; \
+UIAlertAction *action = [UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:nil]; \
+[alertController addAction:action]; \
+[VC presentViewController:alertController animated:YES completion:nil]
+
+//是否为空或是[NSNull null]
+#define NotNilAndNull(_ref)  (((_ref) != nil) && (![(_ref) isEqual:[NSNull null]]))
+#define IsNilOrNull(_ref)   (((_ref) == nil) || ([(_ref) isEqual:[NSNull null]])
+
+//是否为空或是[NSNull null]
+#define IsStrEmpty(_ref)    (((_ref) == nil) || ([(_ref) isEqual:[NSNull null]]) ||([(_ref)isEqualToString:@""]))
+#define IsArrEmpty(_ref)    (((_ref) == nil) || ([(_ref) isEqual:[NSNull null]]) ||([(_ref) count] == 0))
+
+/** 便捷方式创建NSNumber类型 */
+#undef    __INT
+#define __INT( __x )            [NSNumber numberWithInt:(NSInteger)__x]
+
+#undef    __UINT
+#define __UINT( __x )            [NSNumber numberWithUnsignedInt:(NSUInteger)__x]
+
+#undef    __FLOAT
+#define    __FLOAT( __x )            [NSNumber numberWithFloat:(float)__x]
+
+#undef    __DOUBLE
+#define    __DOUBLE( __x )            [NSNumber numberWithDouble:(double)__x]
+/** 便捷创建NSString */
+#undef  STR_FROM_INT
+#define STR_FROM_INT( __x )     [NSString stringWithFormat:@"%d", (__x)]
+
+/** 线程执行方法 */
+#define Foreground_Begin  dispatch_async(dispatch_get_main_queue(), ^{
+#define Foreground_End    });
+
+#define Background_Begin  dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{\
+@autoreleasepool {
+#define Background_End          }\
+});
+
+/** 线程执行方法 */
+#undef    AS_SINGLETON
+#define AS_SINGLETON( __class ) \
++ (__class *)sharedInstance;
+
+#undef    DEF_SINGLETON
+#define DEF_SINGLETON( __class ) \
++ (__class *)sharedInstance \
+{ \
+static dispatch_once_t once; \
+static __class * __singleton__; \
+dispatch_once( &once, ^{ __singleton__ = [[__class alloc] init]; } ); \
+return __singleton__; \
+}
+#define OC(str) [NSString stringWithCString:(str) encoding:NSUTF8StringEncoding]
+
+/** 去掉首尾空格和换行符 */
+#define FirstAndLastSpace(str) [str stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]]
+/**去掉所有空格*/
+#define RemoveAllSpaces(str) [str stringByReplacingOccurrencesOfString:@" " withString:@""]
+
+#define Font_Size(f)            [UIFont systemFontOfSize:(f)]
+#define Font_Bold_Size(f)       [UIFont boldSystemFontOfSize:(f)]
+#define Font_Italic_Size(f)     [UIFont italicSystemFontOfSize:(f)]
+
+//获取相机权限状态
+#define CameraStatus [AVCaptureDevice authorizationStatusForMediaType:AVMediaTypeVideo]
+#define CameraDenied ((CameraStatus == AVAuthorizationStatusRestricted)||(CameraStatus == AVAuthorizationStatusDenied))
+#define CameraAllowed (!CameraDenyed)
+
+/** 定位权限*/
+#define LocationStatus [CLLocationManager authorizationStatus];
+#define LocationAllowed ([CLLocationManager locationServicesEnabled] && !((status == kCLAuthorizationStatusDenied) || (status == kCLAuthorizationStatusRestricted)))
+#define LocationDenied (!LocationAllowed)
+
+/** 消息推送权限*/
+#define PushClose (([[UIDevice currentDevice].systemVersion floatValue]>=8.0f)?(UIUserNotificationTypeNone == [[UIApplication sharedApplication] currentUserNotificationSettings].types):(UIRemoteNotificationTypeNone == [[UIApplication sharedApplication] enabledRemoteNotificationTypes]))
+#define PushOpen (!PushClose)
+
+#define WeakSelf(type)  __weak typeof(type) weak##type = type;
+#define StrongSelf(type)  __strong typeof(type) type = weak##type;
+
+#define kGetImage(imageName) [UIImage imageNamed:[NSString stringWithFormat:@"%@",imageName]]
+#endif /* info_pch */
+#endif /* info_pch */
+
