@@ -9,6 +9,7 @@
 #import "AZPPhoneLoginView.h"
 #import <YYKit/UIView+YYAdd.h>
 #import "AZPRegiestOrLoginView.h"
+
 @interface AZPPhoneLoginView()<UIScrollViewDelegate>
 @property (strong, nonatomic) IBOutlet UIButton *cancleButton;
 @property (strong, nonatomic) IBOutlet UIButton *regiestButton;
@@ -22,14 +23,13 @@
 @implementation AZPPhoneLoginView
 - (AZPRegiestOrLoginView *)regiestView{
     if (!_regiestView) {
-        _regiestView = [[[NSBundle mainBundle]loadNibNamed:@"AZPRegiestOrLoginView" owner:self options:nil]lastObject];
+        _regiestView = [AZPRegiestOrLoginView loadNibWithType:PhoneRegiest];
     }
     return _regiestView ;
 }
 - (AZPRegiestOrLoginView *)loginView{
     if (!_loginView) {
-        _loginView = [[[NSBundle mainBundle]loadNibNamed:@"AZPRegiestOrLoginView" owner:self options:nil]lastObject];
-        
+        _loginView = [AZPRegiestOrLoginView loadNibWithType:PhoneLogin];
     }
     return _loginView ;
 }
@@ -43,19 +43,26 @@
     [[self.regiestButton rac_signalForControlEvents:UIControlEventTouchUpInside]subscribeNext:^(__kindof UIControl * _Nullable x) {
         @strongify(self);
         [self setRegisetButton];
-        [self.contentScrollView setContentOffset:CGPointMake(kScreenWidth-50, 0)];
+        [UIView animateWithDuration:0.5f animations:^{
+            [self.contentScrollView setContentOffset:CGPointMake(0, 0)];
+        }];
     }];
     [[self.loginButton rac_signalForControlEvents:UIControlEventTouchUpInside]subscribeNext:^(__kindof UIControl * _Nullable x) {
         @strongify(self);
         [self setLoginButton];
-          [self.contentScrollView setContentOffset:CGPointMake(0, 0)];
+        [UIView animateWithDuration:.5f animations:^{
+            [self.contentScrollView setContentOffset:CGPointMake((kScreenWidth-50), 0)];
+        } completion:^(BOOL finished) {
+            
+        }];
+        
     }];
 }
 - (void) initUI{
     self.layer.cornerRadius = 5;
     self.layer.masksToBounds = YES;
     [self setRegisetButton];
-    [self.contentScrollView setContentSize:CGSizeMake(self.contentScrollView.width*2, 325)];
+    [self.contentScrollView setContentSize:CGSizeMake((kScreenWidth-50)*2, 325)];
     [self.contentScrollView  setBounces:NO];
     [self.contentScrollView  setPagingEnabled:YES];
     [self.contentScrollView  setShowsHorizontalScrollIndicator:NO];
@@ -68,16 +75,18 @@
     [self addSubview:self.contentScrollView];
 }
 - (void) setRegisetButton{
-    [UIView animateWithDuration:.5 animations:^{
+    [UIView animateWithDuration:.25f animations:^{
         self.underLine.centerX = self.regiestButton.centerX;
+    } completion:^(BOOL finished) {
         [self.regiestButton setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
         [self.loginButton setTitleColor:[UIColor lightGrayColor] forState:UIControlStateNormal];
     }];
   
 }
 - (void) setLoginButton{
-    [UIView animateWithDuration:.5 animations:^{
+    [UIView animateWithDuration:.25f animations:^{
         self.underLine.centerX = self.loginButton.centerX;
+    }completion:^(BOOL finished) {
         [self.loginButton setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
         [self.regiestButton setTitleColor:[UIColor lightGrayColor] forState:UIControlStateNormal];
     }];

@@ -9,9 +9,12 @@
 #import <UIKit/UIKit.h>
 
 NS_ASSUME_NONNULL_BEGIN
-
+typedef NS_ENUM(NSUInteger, PhoneRegiestType) {
+    PhoneRegiest  = 0,
+    PhoneLogin,
+};
 @interface AZPRegiestOrLoginView : UIView
-
++ (AZPRegiestOrLoginView *) loadNibWithType:(PhoneRegiestType)type;
 @end
 
 NS_ASSUME_NONNULL_END
