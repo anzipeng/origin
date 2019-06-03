@@ -11,10 +11,12 @@
 NS_ASSUME_NONNULL_BEGIN
 typedef NS_ENUM(NSUInteger, LoginViewType) {
     LoginViewTypeSelect = 0,
+    LoginViewTypePhone,
 };
 
 @interface AZPLoginViewManager : UIView
 - (void) showLoginTypeView:(LoginViewType) viewType;
+- (void) dismiss;
 @end
 
 NS_ASSUME_NONNULL_END

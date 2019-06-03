@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="AZPPhoneLoginView">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="400"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8lt-WV-ZW5">
+                    <rect key="frame" x="340" y="10" width="20" height="20"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="20" id="9mi-Fb-l7b"/>
+                        <constraint firstAttribute="width" constant="20" id="VV5-4X-SMb"/>
+                    </constraints>
+                    <state key="normal" title="Button" image="daily_selection_menu_more_close"/>
+                </button>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VJt-wl-Qgh">
+                    <rect key="frame" x="75" y="71" width="45" height="3"/>
+                    <color key="backgroundColor" red="1" green="0.21580562619999999" blue="0.21825231689999999" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="3" id="eAM-j3-fvu"/>
+                        <constraint firstAttribute="width" constant="45" id="yUv-SV-XsL"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="b9a-0V-8Ct">
+                    <rect key="frame" x="0.0" y="74" width="375" height="1"/>
+                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="1" id="bLW-Mi-GhS"/>
+                    </constraints>
+                </view>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EYU-a9-xi0">
+                    <rect key="frame" x="80" y="45" width="35" height="21"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="35" id="8EI-Sq-QGh"/>
+                        <constraint firstAttribute="height" constant="21" id="laP-zz-fqp"/>
+                    </constraints>
+                    <state key="normal" title="注册">
+                        <color key="titleColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </state>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gVa-ST-cDT">
+                    <rect key="frame" x="260" y="45" width="35" height="21"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="21" id="SR3-8M-K4P"/>
+                        <constraint firstAttribute="width" constant="35" id="s1j-Bf-UFV"/>
+                    </constraints>
+                    <state key="normal" title="登录">
+                        <color key="titleColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </state>
+                </button>
+                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="78h-sW-cMj">
+                    <rect key="frame" x="0.0" y="75" width="375" height="325"/>
+                </scrollView>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="b9a-0V-8Ct" firstAttribute="top" secondItem="VJt-wl-Qgh" secondAttribute="bottom" id="0pJ-GE-7IA"/>
+                <constraint firstItem="EYU-a9-xi0" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="45" id="39c-0W-Kk0"/>
+                <constraint firstItem="gVa-ST-cDT" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="45" id="6rz-re-UlZ"/>
+                <constraint firstItem="VJt-wl-Qgh" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="75" id="7Ph-sU-ZhU"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="b9a-0V-8Ct" secondAttribute="trailing" id="JJg-LM-orw"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="gVa-ST-cDT" secondAttribute="trailing" constant="80" id="Ne1-Lr-Vnp"/>
+                <constraint firstItem="VJt-wl-Qgh" firstAttribute="top" secondItem="EYU-a9-xi0" secondAttribute="bottom" constant="5" id="Re1-NS-NpQ"/>
+                <constraint firstItem="b9a-0V-8Ct" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="SLC-yx-hfU"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="8lt-WV-ZW5" secondAttribute="trailing" constant="15" id="TOI-XL-ApZ"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="78h-sW-cMj" secondAttribute="bottom" id="bSl-yF-GR2"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="78h-sW-cMj" secondAttribute="trailing" id="nAj-qM-8Aa"/>
+                <constraint firstItem="78h-sW-cMj" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="rQr-nX-7ep"/>
+                <constraint firstItem="EYU-a9-xi0" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="80" id="vnd-N0-idj"/>
+                <constraint firstItem="78h-sW-cMj" firstAttribute="top" secondItem="b9a-0V-8Ct" secondAttribute="bottom" id="wvD-9x-mpT"/>
+                <constraint firstItem="8lt-WV-ZW5" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="10" id="y7B-YV-mtv"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <connections>
+                <outlet property="cancleButton" destination="8lt-WV-ZW5" id="Ihb-Yn-6f7"/>
+                <outlet property="contentScrollView" destination="78h-sW-cMj" id="9Xn-gj-hsI"/>
+                <outlet property="loginButton" destination="gVa-ST-cDT" id="sxR-eB-xTL"/>
+                <outlet property="regiestButton" destination="EYU-a9-xi0" id="Bgx-2o-4XA"/>
+                <outlet property="underLine" destination="VJt-wl-Qgh" id="8AW-2J-i91"/>
+            </connections>
+            <point key="canvasLocation" x="39.200000000000003" y="46.776611694152926"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="daily_selection_menu_more_close" width="33" height="33"/>
+    </resources>
+</document>

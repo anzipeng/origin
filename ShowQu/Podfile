@@ -5,4 +5,5 @@ target 'ShowQu' do
   use_frameworks!
   pod 'MJExtension'
   pod 'ReactiveObjC'
+  pod 'YYKit'
 end

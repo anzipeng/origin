@@ -9,6 +9,10 @@
 /* Begin PBXBuildFile section */
 		00FFB85E22A41C2800FDD825 /* NSObject+AZPObjct.m in Sources */ = {isa = PBXBuildFile; fileRef = 00FFB85D22A41C2800FDD825 /* NSObject+AZPObjct.m */; };
 		00FFB86422A422BF00FDD825 /* AZPLoginViewManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 00FFB86322A422BF00FDD825 /* AZPLoginViewManager.m */; };
+		6C047F6922A4A78000343DA9 /* AZPPhoneLoginView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C047F6822A4A78000343DA9 /* AZPPhoneLoginView.m */; };
+		6C047F6B22A4A79F00343DA9 /* AZPPhoneLoginView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6C047F6A22A4A79F00343DA9 /* AZPPhoneLoginView.xib */; };
+		6C047F6E22A50F4800343DA9 /* AZPRegiestOrLoginView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C047F6D22A50F4800343DA9 /* AZPRegiestOrLoginView.m */; };
+		6C047F7022A50F5800343DA9 /* AZPRegiestOrLoginView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6C047F6F22A50F5800343DA9 /* AZPRegiestOrLoginView.xib */; };
 		6C2655C5229F7B2E00A0049F /* GuideImage.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 6C2655C0229F7B2E00A0049F /* GuideImage.bundle */; };
 		6C2655C6229F7B2E00A0049F /* DHGifImageOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C2655C1229F7B2E00A0049F /* DHGifImageOperation.m */; };
 		6C2655C7229F7B2E00A0049F /* DHGuidePageHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C2655C4229F7B2E00A0049F /* DHGuidePageHUD.m */; };
@@ -59,6 +63,12 @@
 		00FFB86222A422BF00FDD825 /* AZPLoginViewManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AZPLoginViewManager.h; sourceTree = "<group>"; };
 		00FFB86322A422BF00FDD825 /* AZPLoginViewManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AZPLoginViewManager.m; sourceTree = "<group>"; };
 		2F79B9C6E2F9E050B32A7387 /* Pods-ShowQu.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ShowQu.release.xcconfig"; path = "Pods/Target Support Files/Pods-ShowQu/Pods-ShowQu.release.xcconfig"; sourceTree = "<group>"; };
+		6C047F6722A4A78000343DA9 /* AZPPhoneLoginView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AZPPhoneLoginView.h; sourceTree = "<group>"; };
+		6C047F6822A4A78000343DA9 /* AZPPhoneLoginView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AZPPhoneLoginView.m; sourceTree = "<group>"; };
+		6C047F6A22A4A79F00343DA9 /* AZPPhoneLoginView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AZPPhoneLoginView.xib; sourceTree = "<group>"; };
+		6C047F6C22A50F4800343DA9 /* AZPRegiestOrLoginView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AZPRegiestOrLoginView.h; sourceTree = "<group>"; };
+		6C047F6D22A50F4800343DA9 /* AZPRegiestOrLoginView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AZPRegiestOrLoginView.m; sourceTree = "<group>"; };
+		6C047F6F22A50F5800343DA9 /* AZPRegiestOrLoginView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AZPRegiestOrLoginView.xib; sourceTree = "<group>"; };
 		6C2655C0229F7B2E00A0049F /* GuideImage.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = GuideImage.bundle; sourceTree = "<group>"; };
 		6C2655C1229F7B2E00A0049F /* DHGifImageOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DHGifImageOperation.m; sourceTree = "<group>"; };
 		6C2655C2229F7B2E00A0049F /* DHGuidePageHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DHGuidePageHUD.h; sourceTree = "<group>"; };
@@ -341,6 +351,12 @@
 				6C2655DD229F9CB300A0049F /* AZPLoginTypeSelcetView.xib */,
 				00FFB86222A422BF00FDD825 /* AZPLoginViewManager.h */,
 				00FFB86322A422BF00FDD825 /* AZPLoginViewManager.m */,
+				6C047F6722A4A78000343DA9 /* AZPPhoneLoginView.h */,
+				6C047F6822A4A78000343DA9 /* AZPPhoneLoginView.m */,
+				6C047F6A22A4A79F00343DA9 /* AZPPhoneLoginView.xib */,
+				6C047F6C22A50F4800343DA9 /* AZPRegiestOrLoginView.h */,
+				6C047F6D22A50F4800343DA9 /* AZPRegiestOrLoginView.m */,
+				6C047F6F22A50F5800343DA9 /* AZPRegiestOrLoginView.xib */,
 			);
 			path = LoginPage;
 			sourceTree = "<group>";
@@ -469,7 +485,9 @@
 				6C80619C229B879400B7B766 /* Assets.xcassets in Resources */,
 				6C2655C5229F7B2E00A0049F /* GuideImage.bundle in Resources */,
 				6C2A5AB2229D3665002B3234 /* AZPLoginView.xib in Resources */,
+				6C047F7022A50F5800343DA9 /* AZPRegiestOrLoginView.xib in Resources */,
 				6C2A5A8B229D29FC002B3234 /* Launch Screen.storyboard in Resources */,
+				6C047F6B22A4A79F00343DA9 /* AZPPhoneLoginView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -499,11 +517,13 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-ShowQu/Pods-ShowQu-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/MJExtension/MJExtension.framework",
 				"${BUILT_PRODUCTS_DIR}/ReactiveObjC/ReactiveObjC.framework",
+				"${BUILT_PRODUCTS_DIR}/YYKit/YYKit.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MJExtension.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ReactiveObjC.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/YYKit.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -554,6 +574,8 @@
 				6C2655D0229F7D4500A0049F /* AZPMyBookMarkViewController.m in Sources */,
 				6C2A5A98229D2D84002B3234 /* AZPTabbarViewController.m in Sources */,
 				6C2655D9229F7D9C00A0049F /* AZPMeViewController.m in Sources */,
+				6C047F6922A4A78000343DA9 /* AZPPhoneLoginView.m in Sources */,
+				6C047F6E22A50F4800343DA9 /* AZPRegiestOrLoginView.m in Sources */,
 				6C2655DC229F9CA200A0049F /* AZPLoginTypeSelcetView.m in Sources */,
 				6C2A5A9D229D2E1B002B3234 /* AZPNavigationViewController.m in Sources */,
 				6C2A5AB0229D3652002B3234 /* AZPLoginView.m in Sources */,

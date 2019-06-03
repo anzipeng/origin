@@ -11,6 +11,10 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface AZPLoginTypeSelcetView : UIView
+@property (strong, nonatomic) IBOutlet UIButton *phoneLogin;
+@property (strong, nonatomic) IBOutlet UIButton *QQLogin;
+@property (strong, nonatomic) IBOutlet UIButton *weiboLogin;
+@property (strong, nonatomic) IBOutlet UIButton *wechatLogin;
 
 @end
 

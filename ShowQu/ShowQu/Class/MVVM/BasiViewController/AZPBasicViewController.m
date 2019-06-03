@@ -55,6 +55,7 @@
                 [self.view addSubview:self.loginViewManager];
                 [self.loginViewManager setAlpha:1.0];
                 [self.loginViewManager showLoginTypeView:LoginViewTypeSelect];
+            
             }];
         }
         if([x isKindOfClass:[User class]]){

@@ -8,17 +8,27 @@
 
 #import "AZPLoginViewManager.h"
 #import "AZPLoginTypeSelcetView.h"
+#import "AZPPhoneLoginView.h"
+#import <YYKit/UIView+YYAdd.h>
+
 @interface AZPLoginViewManager()
 @property (nonatomic,strong) AZPLoginTypeSelcetView *loginSelectView;
+@property (nonatomic,strong) AZPPhoneLoginView *phoneLoginView;
+
 @end
 @implementation AZPLoginViewManager
 
 - (AZPLoginTypeSelcetView *)loginSelectView{
     if (!_loginSelectView) {
         _loginSelectView = [[[NSBundle mainBundle]loadNibNamed:@"AZPLoginTypeSelcetView" owner:self options:nil]lastObject];
-       
     }
     return _loginSelectView;
+}
+- (AZPPhoneLoginView *)phoneLoginView{
+    if (!_phoneLoginView) {
+        _phoneLoginView = [[[NSBundle mainBundle]loadNibNamed:@"AZPPhoneLoginView" owner:self options:nil]lastObject];
+    }
+    return _phoneLoginView;
 }
 - (instancetype)initWithFrame:(CGRect)frame
 {
@@ -39,13 +49,37 @@
     [bgView addGestureRecognizer:tapGesture];
 }
 - (void)showLoginTypeView:(LoginViewType)viewType{
+    for (UIView* view in self.subviews) {
+        if([view isKindOfClass:[AZPPhoneLoginView class]]){
+            [self.phoneLoginView removeFromSuperview];
+            self.phoneLoginView = nil;
+        }
+        if([view isKindOfClass:[AZPLoginTypeSelcetView class]]){
+            [self.loginSelectView removeFromSuperview];
+            self.loginSelectView = nil;
+        }
+    }
     if(viewType == LoginViewTypeSelect){
         [self addSubview:self.loginSelectView];
          self.loginSelectView.frame = CGRectMake(25, -400, kScreenWidth-50, 400);
-        [UIView animateWithDuration:1 animations:^{
-            self.loginSelectView.center = CGPointMake(kScreenWidth/2, kScreenHeight/2);
+        [UIView animateWithDuration:.6f animations:^{
+            self.loginSelectView.centerY = kScreenHeight/2;
+            [[self.loginSelectView.phoneLogin rac_signalForControlEvents:UIControlEventTouchUpInside]subscribeNext:^(__kindof UIControl * _Nullable x) {
+                NSLog(@"点击了按钮");
+                [self dismiss:NO];
+               
+            }];
         } completion:^(BOOL finished) {
-        
+           
+        }];
+    }
+    if(viewType == LoginViewTypePhone){
+        [self addSubview:self.phoneLoginView];
+        self.phoneLoginView.frame = CGRectMake(25, -400, kScreenWidth-50, 400);
+        [UIView animateWithDuration:.6f animations:^{
+            self.phoneLoginView.centerY = kScreenHeight/2;
+        } completion:^(BOOL finished) {
+            
         }];
     }
     UIWindow * window = [UIApplication sharedApplication].windows[0];
@@ -53,21 +87,29 @@
 }
 #pragma mark - 手势点击事件,移除View
 - (void)dismissContactView:(UITapGestureRecognizer *)tapGesture{
-    
-    [self dismissContactView];
+    [self dismiss:YES];
 }
-
--(void)dismissContactView
+-(void)dismiss:(BOOL) dismiss;
 {
-    __weak typeof(self)weakSelf = self;
-    [UIView animateWithDuration:1.f animations:^{
-        weakSelf.alpha = 0;
+    
+    [UIView animateWithDuration:.6f animations:^{
         if(self.loginSelectView){
-              self.loginSelectView.frame = CGRectMake(25, kScreenHeight+400, kScreenWidth-50, 400);
+              self.loginSelectView.centerY = kScreenHeight+400;
+        }
+        if(self.phoneLoginView){
+            self.phoneLoginView.centerY = kScreenHeight+400;
         }
     } completion:^(BOOL finished) {
-        [weakSelf removeFromSuperview];
+        
+        if(dismiss){
+            [self removeFromSuperview];
+        }else{
+            [self showLoginTypeView:LoginViewTypePhone];
+        }
     }];
     
+}
+- (void)dismiss{
+    [self removeFromSuperview];
 }
 @end

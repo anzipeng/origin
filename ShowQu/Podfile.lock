@@ -1,15 +1,20 @@
 PODS:
   - MJExtension (3.0.15.1)
   - ReactiveObjC (3.1.0)
+  - YYKit (1.0.9):
+    - YYKit/no-arc (= 1.0.9)
+  - YYKit/no-arc (1.0.9)
 
 DEPENDENCIES:
   - MJExtension
   - ReactiveObjC
+  - YYKit
 
 SPEC CHECKSUMS:
   MJExtension: 19bc33ce2eee2d319760f5622562cf581a6ff756
   ReactiveObjC: 2a38ea15335de4119d8b17caf1db1484f61db902
+  YYKit: 7cda43304a8dc3696c449041e2cb3107b4e236e7
 
-PODFILE CHECKSUM: 26b5e01431920a61a7131db74ffa60c2a679de28
+PODFILE CHECKSUM: 9662b57df8cbf3d370369931c939d6e188035777
 
 COCOAPODS: 1.4.0.beta.2

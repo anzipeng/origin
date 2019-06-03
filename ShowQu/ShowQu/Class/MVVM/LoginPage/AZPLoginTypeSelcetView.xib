@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -188,13 +188,19 @@
                 </userDefinedRuntimeAttribute>
                 <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="NO"/>
             </userDefinedRuntimeAttributes>
+            <connections>
+                <outlet property="QQLogin" destination="hPM-M7-LRe" id="Xb8-sk-i8a"/>
+                <outlet property="phoneLogin" destination="LCO-cU-dzr" id="S26-9M-kM3"/>
+                <outlet property="wechatLogin" destination="ZS2-bJ-t0U" id="IqT-nz-XGp"/>
+                <outlet property="weiboLogin" destination="b5e-pP-Knh" id="tml-nv-ORA"/>
+            </connections>
             <point key="canvasLocation" x="-34.399999999999999" y="73.763118440779621"/>
         </view>
     </objects>
     <resources>
-        <image name="daily_selection_menu_more_close" width="16.5" height="16.5"/>
+        <image name="daily_selection_menu_more_close" width="33" height="33"/>
         <image name="user_login_qq" width="114" height="114"/>
         <image name="user_login_sina" width="114" height="114"/>
-        <image name="手机" width="16" height="16"/>
+        <image name="手机" width="32" height="32"/>
     </resources>
 </document>
