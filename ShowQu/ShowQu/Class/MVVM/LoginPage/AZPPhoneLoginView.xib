@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -22,7 +22,7 @@
                         <constraint firstAttribute="height" constant="20" id="9mi-Fb-l7b"/>
                         <constraint firstAttribute="width" constant="20" id="VV5-4X-SMb"/>
                     </constraints>
-                    <state key="normal" title="Button" image="daily_selection_menu_more_close"/>
+                    <state key="normal" title="Button" image="login_close_btn"/>
                 </button>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VJt-wl-Qgh">
                     <rect key="frame" x="75" y="71" width="45" height="3"/>
@@ -62,6 +62,14 @@
                 <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="78h-sW-cMj">
                     <rect key="frame" x="0.0" y="75" width="375" height="325"/>
                 </scrollView>
+                <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9hk-VB-z18">
+                    <rect key="frame" x="15" y="10" width="20" height="20"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="20" id="Cj8-KL-4QH"/>
+                        <constraint firstAttribute="width" constant="20" id="k3H-rG-L38"/>
+                    </constraints>
+                    <state key="normal" title="Button" image="login_back_btn"/>
+                </button>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
@@ -75,7 +83,9 @@
                 <constraint firstItem="b9a-0V-8Ct" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="SLC-yx-hfU"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="8lt-WV-ZW5" secondAttribute="trailing" constant="15" id="TOI-XL-ApZ"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="78h-sW-cMj" secondAttribute="bottom" id="bSl-yF-GR2"/>
+                <constraint firstItem="9hk-VB-z18" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="10" id="dcH-Pp-Lct"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="78h-sW-cMj" secondAttribute="trailing" id="nAj-qM-8Aa"/>
+                <constraint firstItem="9hk-VB-z18" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="15" id="qrm-no-Nuc"/>
                 <constraint firstItem="78h-sW-cMj" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="rQr-nX-7ep"/>
                 <constraint firstItem="EYU-a9-xi0" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="80" id="vnd-N0-idj"/>
                 <constraint firstItem="78h-sW-cMj" firstAttribute="top" secondItem="b9a-0V-8Ct" secondAttribute="bottom" id="wvD-9x-mpT"/>
@@ -84,6 +94,7 @@
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <connections>
+                <outlet property="backBtn" destination="9hk-VB-z18" id="p0c-lx-Z6F"/>
                 <outlet property="cancleButton" destination="8lt-WV-ZW5" id="Ihb-Yn-6f7"/>
                 <outlet property="contentScrollView" destination="78h-sW-cMj" id="9Xn-gj-hsI"/>
                 <outlet property="loginButton" destination="gVa-ST-cDT" id="sxR-eB-xTL"/>
@@ -94,6 +105,7 @@
         </view>
     </objects>
     <resources>
-        <image name="daily_selection_menu_more_close" width="33" height="33"/>
+        <image name="login_back_btn" width="22.5" height="16.5"/>
+        <image name="login_close_btn" width="16.5" height="16.5"/>
     </resources>
 </document>

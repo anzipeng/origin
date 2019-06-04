@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -160,7 +160,6 @@
                         <constraint firstAttribute="bottom" secondItem="tYj-QX-8H9" secondAttribute="bottom" constant="20" id="qb5-GI-Pzo"/>
                         <constraint firstItem="ng1-Ql-Bpc" firstAttribute="top" secondItem="vBQ-CO-7EL" secondAttribute="top" id="qx4-my-hxi"/>
                         <constraint firstItem="YbO-qA-cWb" firstAttribute="leading" secondItem="vBQ-CO-7EL" secondAttribute="leading" constant="30" id="wom-6g-hdO"/>
-                        <constraint firstAttribute="width" constant="375" id="xDF-S6-EjC"/>
                     </constraints>
                 </view>
             </subviews>
@@ -198,9 +197,9 @@
         </view>
     </objects>
     <resources>
-        <image name="daily_selection_menu_more_close" width="33" height="33"/>
+        <image name="daily_selection_menu_more_close" width="16.5" height="16.5"/>
         <image name="user_login_qq" width="114" height="114"/>
         <image name="user_login_sina" width="114" height="114"/>
-        <image name="手机" width="32" height="32"/>
+        <image name="手机" width="16" height="16"/>
     </resources>
 </document>

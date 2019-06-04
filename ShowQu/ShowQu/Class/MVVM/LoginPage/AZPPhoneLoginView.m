@@ -11,6 +11,9 @@
 #import "AZPRegiestOrLoginView.h"
 
 @interface AZPPhoneLoginView()<UIScrollViewDelegate>
+
+@property (weak, nonatomic) IBOutlet UIButton *backBtn;
+
 @property (strong, nonatomic) IBOutlet UIButton *cancleButton;
 @property (strong, nonatomic) IBOutlet UIButton *regiestButton;
 @property (strong, nonatomic) IBOutlet UIButton *loginButton;
@@ -18,7 +21,8 @@
 @property (strong, nonatomic) IBOutlet UIScrollView *contentScrollView;
 @property (nonatomic,strong) AZPRegiestOrLoginView * regiestView;
 @property (nonatomic,strong) AZPRegiestOrLoginView * loginView;
-
+@property (nonatomic,assign) BOOL regiestBackHidden;
+@property (nonatomic,assign) BOOL loginBackHidden;
 @end
 @implementation AZPPhoneLoginView
 - (AZPRegiestOrLoginView *)regiestView{
@@ -43,6 +47,7 @@
     [[self.regiestButton rac_signalForControlEvents:UIControlEventTouchUpInside]subscribeNext:^(__kindof UIControl * _Nullable x) {
         @strongify(self);
         [self setRegisetButton];
+     
         [UIView animateWithDuration:0.5f animations:^{
             [self.contentScrollView setContentOffset:CGPointMake(0, 0)];
         }];
@@ -50,15 +55,18 @@
     [[self.loginButton rac_signalForControlEvents:UIControlEventTouchUpInside]subscribeNext:^(__kindof UIControl * _Nullable x) {
         @strongify(self);
         [self setLoginButton];
+        
         [UIView animateWithDuration:.5f animations:^{
             [self.contentScrollView setContentOffset:CGPointMake((kScreenWidth-50), 0)];
         } completion:^(BOOL finished) {
             
         }];
-        
+      
     }];
 }
 - (void) initUI{
+    self.regiestBackHidden = YES;
+    self.loginBackHidden = YES;
     self.layer.cornerRadius = 5;
     self.layer.masksToBounds = YES;
     [self setRegisetButton];
@@ -73,10 +81,23 @@
     [self.contentScrollView addSubview:self.loginView];
     
     [self addSubview:self.contentScrollView];
+    [self.regiestView.scrollerOffsetSignal subscribeNext:^(id  _Nullable x) {
+        NSLog(@"x =%@",x);
+        self.backBtn.hidden = NO;
+         self.regiestBackHidden =  NO;
+    }];
+    @weakify(self);
+    [[self.backBtn rac_signalForControlEvents:UIControlEventTouchUpInside]subscribeNext:^(__kindof UIControl * _Nullable x) {
+        @strongify(self);
+        [self.regiestView.contentScrollerView setContentOffset:CGPointMake(0, 0) animated:YES];
+        [self.backBtn setHidden:YES];
+        self.regiestBackHidden =  YES;
+    }];
 }
 - (void) setRegisetButton{
     [UIView animateWithDuration:.25f animations:^{
         self.underLine.centerX = self.regiestButton.centerX;
+        self.backBtn.hidden = self.regiestBackHidden;
     } completion:^(BOOL finished) {
         [self.regiestButton setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
         [self.loginButton setTitleColor:[UIColor lightGrayColor] forState:UIControlStateNormal];
@@ -86,6 +107,7 @@
 - (void) setLoginButton{
     [UIView animateWithDuration:.25f animations:^{
         self.underLine.centerX = self.loginButton.centerX;
+        self.backBtn.hidden = self.loginBackHidden;
     }completion:^(BOOL finished) {
         [self.loginButton setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
         [self.regiestButton setTitleColor:[UIColor lightGrayColor] forState:UIControlStateNormal];

@@ -11,7 +11,10 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface AZPNameAndPasswrd : UIView
+@property (strong, nonatomic) IBOutlet UITextField *phoneNumTextField;
+@property (strong, nonatomic) IBOutlet UITextField *passwordTextField;
 + (AZPNameAndPasswrd *)loadViewWithPasswordContent:(NSString *)passwordContent forgetBtnWidthConstant:(float) fconstant;
+
 @end
 
 NS_ASSUME_NONNULL_END

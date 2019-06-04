@@ -11,8 +11,7 @@
 
 @property (strong, nonatomic) IBOutlet UIView *phoneNumView;
 
-@property (strong, nonatomic) IBOutlet UITextField *phoneNumTextField;
-@property (strong, nonatomic) IBOutlet UITextField *passwordTextField;
+
 @property (strong, nonatomic) IBOutlet UIButton *forgrtPasswordBtn;
 @property (strong, nonatomic) IBOutlet UIView *passwordView;
 @property (strong, nonatomic) IBOutlet NSLayoutConstraint *forgetBtnWidthConstant;
@@ -22,17 +21,13 @@
 @property (nonatomic,assign) float forgetBtnConstant;
 @end
 @implementation AZPNameAndPasswrd
-- (instancetype)initWithFrame:(CGRect)frame{
-   self =  [super initWithFrame:frame];
-    NSLog(@"a");
-    return self;
-}
 - (void)awakeFromNib{
     [super awakeFromNib];
     [self initUI];
 }
 - (void)layoutSubviews{
     [super layoutSubviews];
+    NSLog(@"%@ -- %f",self.passwordPlaceHolder,self.forgetBtnConstant);
     [self.passwordTextField setPlaceholder:self.passwordPlaceHolder];
      self.forgetBtnWidthConstant.constant = self.forgetBtnConstant;
 }
