@@ -28,6 +28,11 @@
 		6C2A5A9D229D2E1B002B3234 /* AZPNavigationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C2A5A9C229D2E1B002B3234 /* AZPNavigationViewController.m */; };
 		6C2A5AB0229D3652002B3234 /* AZPLoginView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C2A5AAF229D3652002B3234 /* AZPLoginView.m */; };
 		6C2A5AB2229D3665002B3234 /* AZPLoginView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6C2A5AB1229D3665002B3234 /* AZPLoginView.xib */; };
+		6C6EFE3022A63FAB00C395C3 /* NSString+AZPExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C6EFE2F22A63FAB00C395C3 /* NSString+AZPExtension.m */; };
+		6C6EFE3C22A64D1000C395C3 /* AZPNameAndPasswrd.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C6EFE3B22A64D1000C395C3 /* AZPNameAndPasswrd.m */; };
+		6C6EFE3E22A64D1D00C395C3 /* AZPNameAndPasswrd.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6C6EFE3D22A64D1D00C395C3 /* AZPNameAndPasswrd.xib */; };
+		6C6EFE4122A64D4D00C395C3 /* AZPRegiestCode.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C6EFE4022A64D4D00C395C3 /* AZPRegiestCode.m */; };
+		6C6EFE4322A64D6700C395C3 /* AZPRegiestCode.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6C6EFE4222A64D6700C395C3 /* AZPRegiestCode.xib */; };
 		6C806194229B879200B7B766 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C806193229B879200B7B766 /* AppDelegate.m */; };
 		6C80619C229B879400B7B766 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6C80619B229B879400B7B766 /* Assets.xcassets */; };
 		6C80619F229B879400B7B766 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6C80619D229B879400B7B766 /* LaunchScreen.storyboard */; };
@@ -95,6 +100,14 @@
 		6C2A5AAE229D3652002B3234 /* AZPLoginView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AZPLoginView.h; sourceTree = "<group>"; };
 		6C2A5AAF229D3652002B3234 /* AZPLoginView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AZPLoginView.m; sourceTree = "<group>"; };
 		6C2A5AB1229D3665002B3234 /* AZPLoginView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AZPLoginView.xib; sourceTree = "<group>"; };
+		6C6EFE2E22A63FAB00C395C3 /* NSString+AZPExtension.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSString+AZPExtension.h"; sourceTree = "<group>"; };
+		6C6EFE2F22A63FAB00C395C3 /* NSString+AZPExtension.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSString+AZPExtension.m"; sourceTree = "<group>"; };
+		6C6EFE3A22A64D1000C395C3 /* AZPNameAndPasswrd.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AZPNameAndPasswrd.h; sourceTree = "<group>"; };
+		6C6EFE3B22A64D1000C395C3 /* AZPNameAndPasswrd.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AZPNameAndPasswrd.m; sourceTree = "<group>"; };
+		6C6EFE3D22A64D1D00C395C3 /* AZPNameAndPasswrd.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AZPNameAndPasswrd.xib; sourceTree = "<group>"; };
+		6C6EFE3F22A64D4D00C395C3 /* AZPRegiestCode.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AZPRegiestCode.h; sourceTree = "<group>"; };
+		6C6EFE4022A64D4D00C395C3 /* AZPRegiestCode.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AZPRegiestCode.m; sourceTree = "<group>"; };
+		6C6EFE4222A64D6700C395C3 /* AZPRegiestCode.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AZPRegiestCode.xib; sourceTree = "<group>"; };
 		6C80618F229B879200B7B766 /* ShowQu.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ShowQu.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6C806192229B879200B7B766 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		6C806193229B879200B7B766 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -293,6 +306,8 @@
 				6C8061CA229B896E00B7B766 /* AZPNormal.m */,
 				00FFB85C22A41C2800FDD825 /* NSObject+AZPObjct.h */,
 				00FFB85D22A41C2800FDD825 /* NSObject+AZPObjct.m */,
+				6C6EFE2E22A63FAB00C395C3 /* NSString+AZPExtension.h */,
+				6C6EFE2F22A63FAB00C395C3 /* NSString+AZPExtension.m */,
 			);
 			path = Normal;
 			sourceTree = "<group>";
@@ -357,6 +372,12 @@
 				6C047F6C22A50F4800343DA9 /* AZPRegiestOrLoginView.h */,
 				6C047F6D22A50F4800343DA9 /* AZPRegiestOrLoginView.m */,
 				6C047F6F22A50F5800343DA9 /* AZPRegiestOrLoginView.xib */,
+				6C6EFE3A22A64D1000C395C3 /* AZPNameAndPasswrd.h */,
+				6C6EFE3B22A64D1000C395C3 /* AZPNameAndPasswrd.m */,
+				6C6EFE3D22A64D1D00C395C3 /* AZPNameAndPasswrd.xib */,
+				6C6EFE3F22A64D4D00C395C3 /* AZPRegiestCode.h */,
+				6C6EFE4022A64D4D00C395C3 /* AZPRegiestCode.m */,
+				6C6EFE4222A64D6700C395C3 /* AZPRegiestCode.xib */,
 			);
 			path = LoginPage;
 			sourceTree = "<group>";
@@ -484,7 +505,9 @@
 				6C80619F229B879400B7B766 /* LaunchScreen.storyboard in Resources */,
 				6C80619C229B879400B7B766 /* Assets.xcassets in Resources */,
 				6C2655C5229F7B2E00A0049F /* GuideImage.bundle in Resources */,
+				6C6EFE4322A64D6700C395C3 /* AZPRegiestCode.xib in Resources */,
 				6C2A5AB2229D3665002B3234 /* AZPLoginView.xib in Resources */,
+				6C6EFE3E22A64D1D00C395C3 /* AZPNameAndPasswrd.xib in Resources */,
 				6C047F7022A50F5800343DA9 /* AZPRegiestOrLoginView.xib in Resources */,
 				6C2A5A8B229D29FC002B3234 /* Launch Screen.storyboard in Resources */,
 				6C047F6B22A4A79F00343DA9 /* AZPPhoneLoginView.xib in Resources */,
@@ -517,12 +540,14 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-ShowQu/Pods-ShowQu-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/MJExtension/MJExtension.framework",
 				"${BUILT_PRODUCTS_DIR}/ReactiveObjC/ReactiveObjC.framework",
+				"${BUILT_PRODUCTS_DIR}/SVProgressHUD/SVProgressHUD.framework",
 				"${BUILT_PRODUCTS_DIR}/YYKit/YYKit.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MJExtension.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ReactiveObjC.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SVProgressHUD.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/YYKit.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -571,6 +596,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6C8061A2229B879400B7B766 /* main.m in Sources */,
+				6C6EFE3022A63FAB00C395C3 /* NSString+AZPExtension.m in Sources */,
 				6C2655D0229F7D4500A0049F /* AZPMyBookMarkViewController.m in Sources */,
 				6C2A5A98229D2D84002B3234 /* AZPTabbarViewController.m in Sources */,
 				6C2655D9229F7D9C00A0049F /* AZPMeViewController.m in Sources */,
@@ -586,10 +612,12 @@
 				6C2655CD229F7BD500A0049F /* AZPBasicViewController.m in Sources */,
 				6C2655D3229F7D7400A0049F /* AZPDiscoveryViewController.m in Sources */,
 				6C806194229B879200B7B766 /* AppDelegate.m in Sources */,
+				6C6EFE3C22A64D1000C395C3 /* AZPNameAndPasswrd.m in Sources */,
 				00FFB85E22A41C2800FDD825 /* NSObject+AZPObjct.m in Sources */,
 				6C8061CB229B896E00B7B766 /* AZPNormal.m in Sources */,
 				00FFB86422A422BF00FDD825 /* AZPLoginViewManager.m in Sources */,
 				6C2655C7229F7B2E00A0049F /* DHGuidePageHUD.m in Sources */,
+				6C6EFE4122A64D4D00C395C3 /* AZPRegiestCode.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

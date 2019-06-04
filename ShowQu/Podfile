@@ -6,4 +6,5 @@ target 'ShowQu' do
   pod 'MJExtension'
   pod 'ReactiveObjC'
   pod 'YYKit'
+  pod 'SVProgressHUD'
 end

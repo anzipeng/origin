@@ -1,6 +1,7 @@
 PODS:
   - MJExtension (3.0.15.1)
   - ReactiveObjC (3.1.0)
+  - SVProgressHUD (2.2.5)
   - YYKit (1.0.9):
     - YYKit/no-arc (= 1.0.9)
   - YYKit/no-arc (1.0.9)
@@ -8,13 +9,15 @@ PODS:
 DEPENDENCIES:
   - MJExtension
   - ReactiveObjC
+  - SVProgressHUD
   - YYKit
 
 SPEC CHECKSUMS:
   MJExtension: 19bc33ce2eee2d319760f5622562cf581a6ff756
   ReactiveObjC: 2a38ea15335de4119d8b17caf1db1484f61db902
+  SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
   YYKit: 7cda43304a8dc3696c449041e2cb3107b4e236e7
 
-PODFILE CHECKSUM: 9662b57df8cbf3d370369931c939d6e188035777
+PODFILE CHECKSUM: e75200e2a115abc476995431a2cebafa4ead63f7
 
 COCOAPODS: 1.4.0.beta.2

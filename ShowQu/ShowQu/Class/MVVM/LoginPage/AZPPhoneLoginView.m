@@ -62,7 +62,7 @@
     self.layer.cornerRadius = 5;
     self.layer.masksToBounds = YES;
     [self setRegisetButton];
-    [self.contentScrollView setContentSize:CGSizeMake((kScreenWidth-50)*2, 325)];
+    [self.contentScrollView  setContentSize:CGSizeMake((kScreenWidth-50)*2, 325)];
     [self.contentScrollView  setBounces:NO];
     [self.contentScrollView  setPagingEnabled:YES];
     [self.contentScrollView  setShowsHorizontalScrollIndicator:NO];
