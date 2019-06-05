@@ -17,7 +17,7 @@
 @property (nonatomic,strong) AZPRegiestCode * regiestCodeView;
 @property (nonatomic,strong) AZPNameAndPasswrd *nameAndPasswordView;
 
-@property (strong, nonatomic) IBOutlet UIScrollView *contentScrollerView;
+
 
 @property (strong, nonatomic) IBOutlet UIButton *regiestCode;
 @property (strong, nonatomic) IBOutlet UIButton *wechatLogin;
@@ -33,6 +33,7 @@
 + (AZPRegiestOrLoginView *) loadNibWithType:(PhoneRegiestType)type{
     AZPRegiestOrLoginView * view  = [[[NSBundle mainBundle]loadNibNamed:@"AZPRegiestOrLoginView" owner:self options:nil]lastObject];
     view.phoneRegiestType = type;
+    view.scrollerOffsetSignal = [RACSubject subject];
     return view;
 }
 - (AZPRegiestCode *)regiestCodeView{
@@ -59,6 +60,11 @@
 }
 - (void)layoutSubviews{
     [super layoutSubviews];
+    [self.contentScrollerView addSubview:self.nameAndPasswordView];
+    [self.contentScrollerView addSubview:self.regiestCodeView];
+
+    self.nameAndPasswordView.frame = CGRectMake(0, 0, kScreenWidth-50, 150);
+    self.regiestCodeView.frame = CGRectMake(kScreenWidth-50, 0, kScreenWidth-50, 150);
     if(self.phoneRegiestType == PhoneRegiest){
         [self.regiestCode setTitle:@"获取验证码" forState:UIControlStateNormal];
     }
@@ -70,13 +76,12 @@
     if(self.phoneRegiestType == PhoneRegiest){
         //注册逻辑
         @weakify(self);
-//        RAC(self.regiestCode,enabled) = [RACSignal combineLatest:@[self.phoneNum.rac_textSignal,self.passWord.rac_textSignal] reduce:^id _Nonnull(NSString * userName,NSString *passWord){
-//            @strongify(self);
-//            self.username = userName;
-//            self.password = passWord;
-//            return @(userName.length>0 && passWord.length>0);
-//        }];
-        
+        RAC(self.regiestCode,enabled) = [RACSignal combineLatest:@[self.nameAndPasswordView.phoneNumTextField.rac_textSignal,self.nameAndPasswordView.passwordTextField.rac_textSignal] reduce:^id _Nonnull(NSString * userName,NSString *passWord){
+            @strongify(self);
+            self.username = userName;
+            self.password = passWord;
+            return @(userName.length>0 && passWord.length>0);
+        }];
         [[self.regiestCode rac_signalForControlEvents:UIControlEventTouchUpInside]subscribeNext:^(__kindof UIControl * _Nullable x) {
             @strongify(self);
             NSString * infoStr = @"";
@@ -91,9 +96,13 @@
                 }
             if(infoStr.length>0){
                 [[[UIAlertView alloc]initWithTitle:@"提示" message:infoStr delegate:self cancelButtonTitle:nil otherButtonTitles:@"好的", nil] show];
-                return ;
+               
+            }else{
+                  [self.contentScrollerView setContentOffset:CGPointMake(kScreenWidth-50, 0) animated:YES];
+                  [self.scrollerOffsetSignal sendNext:@(NO)];
+//                  [self.scrollerOffsetSignal sendCompleted];
             }
-            
+          
                
             }];
     }else{
@@ -104,16 +113,15 @@
 - (void) initUI{
     self.regiestCode.layer.cornerRadius = 2;
     self.regiestCode.layer.masksToBounds = YES;
-    [self.contentScrollerView  setContentSize:CGSizeMake((kScreenWidth-50)*2, 325)];
+    [self.contentScrollerView  setContentSize:CGSizeMake((kScreenWidth-50)*2, 150)];
     [self.contentScrollerView  setBounces:NO];
+    [self.contentScrollerView  setScrollEnabled:NO];
     [self.contentScrollerView  setPagingEnabled:YES];
     [self.contentScrollerView  setShowsHorizontalScrollIndicator:NO];
-    self.contentScrollerView.userInteractionEnabled = NO;
+  //  self.contentScrollerView.userInteractionEnabled = NO;
     self.contentScrollerView.delegate =(id) self;
-    self.nameAndPasswordView.frame = CGRectMake(0, 0, kScreenWidth-50, 150);
-    self.regiestCodeView.frame = CGRectMake(kScreenWidth-50, 0, kScreenWidth-50, 150);
-    [self.contentScrollerView addSubview:self.nameAndPasswordView];
-    [self.contentScrollerView addSubview:self.regiestCodeView];
+   
+
 }
 
 @end

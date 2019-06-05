@@ -15,6 +15,8 @@ typedef NS_ENUM(NSUInteger, PhoneRegiestType) {
 };
 @interface AZPRegiestOrLoginView : UIView
 + (AZPRegiestOrLoginView *) loadNibWithType:(PhoneRegiestType)type;
+@property(nonatomic,strong) RACSubject * scrollerOffsetSignal;
+@property (strong, nonatomic) IBOutlet UIScrollView *contentScrollerView;
 @end
 
 NS_ASSUME_NONNULL_END
