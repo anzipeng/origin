@@ -27,7 +27,6 @@
 }
 - (void)layoutSubviews{
     [super layoutSubviews];
-    NSLog(@"%@ -- %f",self.passwordPlaceHolder,self.forgetBtnConstant);
     [self.passwordTextField setPlaceholder:self.passwordPlaceHolder];
      self.forgetBtnWidthConstant.constant = self.forgetBtnConstant;
 }

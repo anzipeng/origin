@@ -82,7 +82,6 @@
     
     [self addSubview:self.contentScrollView];
     [self.regiestView.scrollerOffsetSignal subscribeNext:^(id  _Nullable x) {
-        NSLog(@"x =%@",x);
         self.backBtn.hidden = NO;
          self.regiestBackHidden =  NO;
     }];

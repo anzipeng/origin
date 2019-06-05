@@ -20,9 +20,23 @@ static AZPUser * instace;
 + (void)setUserSigle:(RACSignal *)userSignle{
     [userSignle subscribeNext:^(id  _Nullable x) {
         User * user = (User *)x;
-        [UserDefault setObject:[user mj_keyValues] forKey:user_];
-        [UserDefault synchronize];
-        
+        NSMutableArray * arrayM ;
+        NSArray * user_result =  [UserDefault objectForKey:user_];
+        if(user_result == nil){
+          arrayM = @[].mutableCopy;
+          [arrayM addObject:[user mj_keyValues]];
+          [UserDefault setObject:arrayM forKey:user_];
+          [UserDefault synchronize];
+        }else{
+          arrayM = user_result.mutableCopy;
+          for (NSDictionary * u in arrayM) {
+            if ([u.allValues containsObject:user.userName]) return ;
+            [arrayM addObject:[user mj_keyValues]];
+            [UserDefault setObject:arrayM forKey:user_];
+            [UserDefault synchronize];
+            }
+        }
+      
     } error:^(NSError * _Nullable error) {
         
     }];
@@ -51,14 +65,14 @@ static AZPUser * instace;
 + (RACCommand *)getCurrentUserCommand{
     return [[RACCommand alloc]initWithSignalBlock:^RACSignal * _Nonnull(id  _Nullable input) {
         return [RACSignal createSignal:^RACDisposable * _Nullable(id<RACSubscriber>  _Nonnull subscriber) {
-            NSDictionary * userD = [UserDefault objectForKey:user_];
+            NSArray * userD = [UserDefault objectForKey:user_];
             if(userD == nil){
                 [subscriber sendNext:@"no_user_login"];
                 [subscriber sendCompleted];
                 return nil;
             }
-            User * user  = [User mj_objectWithKeyValues:userD];
-            [subscriber sendNext:user];
+            NSArray * userObjs  = [User mj_objectArrayWithKeyValuesArray:userD];
+            [subscriber sendNext:userObjs];
             [subscriber sendCompleted];
             return nil;
         }];

@@ -1,4 +1,9 @@
 PODS:
+  - FMDB (2.7.5):
+    - FMDB/standard (= 2.7.5)
+  - FMDB/standard (2.7.5)
+  - JQFMDB (1.1.6):
+    - FMDB
   - MJExtension (3.0.15.1)
   - ReactiveObjC (3.1.0)
   - SVProgressHUD (2.2.5)
@@ -7,17 +12,20 @@ PODS:
   - YYKit/no-arc (1.0.9)
 
 DEPENDENCIES:
+  - JQFMDB
   - MJExtension
   - ReactiveObjC
   - SVProgressHUD
   - YYKit
 
 SPEC CHECKSUMS:
+  FMDB: 2ce00b547f966261cd18927a3ddb07cb6f3db82a
+  JQFMDB: 39ab0d6d7c26fd30e51c4dd92edcb27506a34c3a
   MJExtension: 19bc33ce2eee2d319760f5622562cf581a6ff756
   ReactiveObjC: 2a38ea15335de4119d8b17caf1db1484f61db902
   SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
   YYKit: 7cda43304a8dc3696c449041e2cb3107b4e236e7
 
-PODFILE CHECKSUM: e75200e2a115abc476995431a2cebafa4ead63f7
+PODFILE CHECKSUM: 3219c916be7d683f72382c24123eb50e67896b59
 
 COCOAPODS: 1.4.0.beta.2

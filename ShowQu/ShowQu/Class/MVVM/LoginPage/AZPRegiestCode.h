@@ -11,7 +11,13 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface AZPRegiestCode : UIView
+@property (nonatomic,strong) RACSubject *timeCountDownCompleteSignal;
+
+@property (strong, nonatomic) IBOutlet UITextField *regiestCodeTextField;
 + (AZPRegiestCode *) loadView;
+
+// 倒计时
+- (void) timeCountDownWithPhoneNum:(NSString *)phoneNum;
 @end
 
 NS_ASSUME_NONNULL_END
