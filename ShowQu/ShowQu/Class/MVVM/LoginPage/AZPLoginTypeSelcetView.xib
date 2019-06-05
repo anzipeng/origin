@@ -160,7 +160,6 @@
                         <constraint firstAttribute="bottom" secondItem="tYj-QX-8H9" secondAttribute="bottom" constant="20" id="qb5-GI-Pzo"/>
                         <constraint firstItem="ng1-Ql-Bpc" firstAttribute="top" secondItem="vBQ-CO-7EL" secondAttribute="top" id="qx4-my-hxi"/>
                         <constraint firstItem="YbO-qA-cWb" firstAttribute="leading" secondItem="vBQ-CO-7EL" secondAttribute="leading" constant="30" id="wom-6g-hdO"/>
-                        <constraint firstAttribute="width" constant="375" id="xDF-S6-EjC"/>
                     </constraints>
                 </view>
             </subviews>
