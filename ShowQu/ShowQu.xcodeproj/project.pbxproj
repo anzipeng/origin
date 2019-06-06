@@ -28,6 +28,7 @@
 		6C2A5A9D229D2E1B002B3234 /* AZPNavigationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C2A5A9C229D2E1B002B3234 /* AZPNavigationViewController.m */; };
 		6C2A5AB0229D3652002B3234 /* AZPLoginView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C2A5AAF229D3652002B3234 /* AZPLoginView.m */; };
 		6C2A5AB2229D3665002B3234 /* AZPLoginView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6C2A5AB1229D3665002B3234 /* AZPLoginView.xib */; };
+		6C4249CE22A8B6F400C283D6 /* AZPBasicDB.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C4249CD22A8B6F400C283D6 /* AZPBasicDB.m */; };
 		6C6EFE3022A63FAB00C395C3 /* NSString+AZPExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C6EFE2F22A63FAB00C395C3 /* NSString+AZPExtension.m */; };
 		6C6EFE3C22A64D1000C395C3 /* AZPNameAndPasswrd.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C6EFE3B22A64D1000C395C3 /* AZPNameAndPasswrd.m */; };
 		6C6EFE3E22A64D1D00C395C3 /* AZPNameAndPasswrd.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6C6EFE3D22A64D1D00C395C3 /* AZPNameAndPasswrd.xib */; };
@@ -100,6 +101,8 @@
 		6C2A5AAE229D3652002B3234 /* AZPLoginView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AZPLoginView.h; sourceTree = "<group>"; };
 		6C2A5AAF229D3652002B3234 /* AZPLoginView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AZPLoginView.m; sourceTree = "<group>"; };
 		6C2A5AB1229D3665002B3234 /* AZPLoginView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AZPLoginView.xib; sourceTree = "<group>"; };
+		6C4249CC22A8B6F400C283D6 /* AZPBasicDB.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AZPBasicDB.h; sourceTree = "<group>"; };
+		6C4249CD22A8B6F400C283D6 /* AZPBasicDB.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AZPBasicDB.m; sourceTree = "<group>"; };
 		6C6EFE2E22A63FAB00C395C3 /* NSString+AZPExtension.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSString+AZPExtension.h"; sourceTree = "<group>"; };
 		6C6EFE2F22A63FAB00C395C3 /* NSString+AZPExtension.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSString+AZPExtension.m"; sourceTree = "<group>"; };
 		6C6EFE3A22A64D1000C395C3 /* AZPNameAndPasswrd.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AZPNameAndPasswrd.h; sourceTree = "<group>"; };
@@ -308,6 +311,8 @@
 				00FFB85D22A41C2800FDD825 /* NSObject+AZPObjct.m */,
 				6C6EFE2E22A63FAB00C395C3 /* NSString+AZPExtension.h */,
 				6C6EFE2F22A63FAB00C395C3 /* NSString+AZPExtension.m */,
+				6C4249CC22A8B6F400C283D6 /* AZPBasicDB.h */,
+				6C4249CD22A8B6F400C283D6 /* AZPBasicDB.m */,
 			);
 			path = Normal;
 			sourceTree = "<group>";
@@ -609,6 +614,7 @@
 				6C2655DC229F9CA200A0049F /* AZPLoginTypeSelcetView.m in Sources */,
 				6C2A5A9D229D2E1B002B3234 /* AZPNavigationViewController.m in Sources */,
 				6C2A5AB0229D3652002B3234 /* AZPLoginView.m in Sources */,
+				6C4249CE22A8B6F400C283D6 /* AZPBasicDB.m in Sources */,
 				6C2655C6229F7B2E00A0049F /* DHGifImageOperation.m in Sources */,
 				6C8061C8229B885500B7B766 /* AZPUser.m in Sources */,
 				6C2655D6229F7D8A00A0049F /* AZPAttentionViewController.m in Sources */,

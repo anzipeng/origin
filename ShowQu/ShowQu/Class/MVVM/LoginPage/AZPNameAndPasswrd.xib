@@ -51,7 +51,7 @@
                     <rect key="frame" x="50" y="82" width="275" height="37"/>
                     <subviews>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SSU-mR-muG">
-                            <rect key="frame" x="202" y="3" width="65" height="31"/>
+                            <rect key="frame" x="207" y="3" width="65" height="31"/>
                             <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="65" id="CFn-hb-ZGn"/>
@@ -68,7 +68,7 @@
                             </userDefinedRuntimeAttributes>
                         </button>
                         <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="LdQ-dc-IZm">
-                            <rect key="frame" x="8" y="0.0" width="186" height="37"/>
+                            <rect key="frame" x="8" y="0.0" width="191" height="37"/>
                             <nil key="textColor"/>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
@@ -82,7 +82,7 @@
                         <constraint firstItem="LdQ-dc-IZm" firstAttribute="top" secondItem="snh-yH-K5K" secondAttribute="top" id="SY1-Qo-C8J"/>
                         <constraint firstAttribute="bottom" secondItem="LdQ-dc-IZm" secondAttribute="bottom" id="VPc-cS-MAK"/>
                         <constraint firstItem="SSU-mR-muG" firstAttribute="top" secondItem="snh-yH-K5K" secondAttribute="top" constant="3" id="gWL-FT-w2i"/>
-                        <constraint firstItem="SSU-mR-muG" firstAttribute="trailing" secondItem="snh-yH-K5K" secondAttribute="trailingMargin" id="vex-1J-sG8"/>
+                        <constraint firstItem="SSU-mR-muG" firstAttribute="trailing" secondItem="snh-yH-K5K" secondAttribute="trailingMargin" constant="5" id="vex-1J-sG8"/>
                         <constraint firstAttribute="height" constant="37" id="yYG-On-yrN"/>
                     </constraints>
                 </view>

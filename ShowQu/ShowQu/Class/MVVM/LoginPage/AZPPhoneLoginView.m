@@ -79,11 +79,10 @@
     self.loginView.frame = CGRectMake(kScreenWidth-50, 0, kScreenWidth-50, 325);
     [self.contentScrollView addSubview:self.regiestView];
     [self.contentScrollView addSubview:self.loginView];
-    
     [self addSubview:self.contentScrollView];
     [self.regiestView.scrollerOffsetSignal subscribeNext:^(id  _Nullable x) {
         self.backBtn.hidden = NO;
-         self.regiestBackHidden =  NO;
+        self.regiestBackHidden =  NO;
     }];
     @weakify(self);
     [[self.backBtn rac_signalForControlEvents:UIControlEventTouchUpInside]subscribeNext:^(__kindof UIControl * _Nullable x) {
@@ -117,6 +116,12 @@
 - (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView {
     int page = scrollView.contentOffset.x / scrollView.frame.size.width;
     if(page == 0)[self setRegisetButton];
-    if(page == 1) [self setLoginButton];
+    if(page == 1) {
+        [self setLoginButton];
+        // 重绘子视图的界面
+        self.loginView.nameAndPasswordView.forgetBtnWConstant = 75.f;
+        self.loginView.nameAndPasswordView.passwordPlacehoder = @"请输入密码";
+        [self.loginView.nameAndPasswordView layoutSubviews];
+    };
 }
 @end

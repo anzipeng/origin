@@ -15,10 +15,6 @@
 @property (strong, nonatomic) IBOutlet UIButton *forgrtPasswordBtn;
 @property (strong, nonatomic) IBOutlet UIView *passwordView;
 @property (strong, nonatomic) IBOutlet NSLayoutConstraint *forgetBtnWidthConstant;
-
-
-@property (nonatomic,copy) NSString *passwordPlaceHolder;
-@property (nonatomic,assign) float forgetBtnConstant;
 @end
 @implementation AZPNameAndPasswrd
 - (void)awakeFromNib{
@@ -27,13 +23,14 @@
 }
 - (void)layoutSubviews{
     [super layoutSubviews];
-    [self.passwordTextField setPlaceholder:self.passwordPlaceHolder];
-     self.forgetBtnWidthConstant.constant = self.forgetBtnConstant;
+   
+    [self.passwordTextField setPlaceholder:self.passwordPlacehoder ==nil?@"密码(至少6位数字或字母)":self.passwordPlacehoder];
+
+    self.forgetBtnWidthConstant.constant = (self.forgetBtnWConstant?self.forgetBtnWConstant:0.f);
 }
-+ (AZPNameAndPasswrd *)loadViewWithPasswordContent:(NSString *)passwordContent forgetBtnWidthConstant:(float)fconstant{
+
++ (AZPNameAndPasswrd *)loadView{
     AZPNameAndPasswrd * view = [[[NSBundle mainBundle]loadNibNamed:@"AZPNameAndPasswrd" owner:self options:nil]lastObject];
-    view.forgetBtnConstant = fconstant;
-    view.passwordPlaceHolder = passwordContent;
     return view;
 }
 - (void) initUI{
@@ -45,6 +42,7 @@
     self.passwordView.layer.cornerRadius = 2;
     self.passwordView.layer.borderWidth = .5f;
     self.passwordView.layer.borderColor = [UIColor blackColor].CGColor;
+    [self layoutSubviews];
 }
 
 @end

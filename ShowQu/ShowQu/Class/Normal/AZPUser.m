@@ -8,15 +8,36 @@
 
 #import "AZPUser.h"
 #import "MJExtension.h"
+#import <JQFMDB/JQFMDB.h>
+// 注册表
+static NSString * const User_regiest = @"User.regiest";
+// 登录表
+static NSString * const User_login  = @"User.login";
+
 static  NSString * const  user_ = @"user";
 static  NSString * const firstLogin_ = @"firstLogin";
+
 @interface AZPUser(){
     NSString * _currentUserName;
+   
 }
 
+
 @end
+
 @implementation AZPUser
 static AZPUser * instace;
+
++ (void)regiestUser:(RACSignal *)userSignal{
+    [userSignal subscribeNext:^(id  _Nullable x) {
+        User * user = (User*)x;
+       
+    }];
+}
++ ()
++ (BOOL) isExist:(NSString *)tableName{
+    return [[JQFMDB shareDatabase] jq_isExistTable:tableName];
+}
 + (void)setUserSigle:(RACSignal *)userSignle{
     [userSignle subscribeNext:^(id  _Nullable x) {
         User * user = (User *)x;

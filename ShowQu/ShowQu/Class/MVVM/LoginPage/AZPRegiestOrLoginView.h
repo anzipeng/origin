@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "AZPRegiestCode.h"
+#import "AZPNameAndPasswrd.h"
 NS_ASSUME_NONNULL_BEGIN
 typedef NS_ENUM(NSUInteger, PhoneRegiestType) {
     PhoneRegiest  = 0,
@@ -15,6 +16,10 @@ typedef NS_ENUM(NSUInteger, PhoneRegiestType) {
 };
 @interface AZPRegiestOrLoginView : UIView
 + (AZPRegiestOrLoginView *) loadNibWithType:(PhoneRegiestType)type;
+
+@property (nonatomic,strong) AZPRegiestCode * regiestCodeView;
+@property (nonatomic,strong) AZPNameAndPasswrd *nameAndPasswordView;
+
 @property(nonatomic,strong) RACSubject * scrollerOffsetSignal;
 @property (strong, nonatomic) IBOutlet UIScrollView *contentScrollerView;
 @end

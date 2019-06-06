@@ -14,6 +14,9 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic,copy) NSString *password;
 @end
 @interface AZPUser : NSObject
+// 注册账户
++(void) regiestUser:(RACSignal *)userSignal;
+
 +(void) setUserSigle:(RACSignal *)userSignle;
 +(void) firstLoginSigle:(RACSignal *)firstLoginSigle;
 +(RACCommand *) removeUserRACCommand;

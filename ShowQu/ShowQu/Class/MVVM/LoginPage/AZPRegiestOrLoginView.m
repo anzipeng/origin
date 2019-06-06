@@ -10,13 +10,9 @@
 #import <YYKit/NSString+YYAdd.h>
 #import <SVProgressHUD/SVProgressHUD.h>
 #import "NSString+AZPExtension.h"
-#import "AZPRegiestCode.h"
-#import "AZPNameAndPasswrd.h"
+
 #import "AZPUser.h"
 @interface AZPRegiestOrLoginView()<UIScrollViewDelegate>
-
-@property (nonatomic,strong) AZPRegiestCode * regiestCodeView;
-@property (nonatomic,strong) AZPNameAndPasswrd *nameAndPasswordView;
 
 @property (strong, nonatomic) IBOutlet UIButton *regiestCode;
 @property (strong, nonatomic) IBOutlet UIButton *wechatLogin;
@@ -46,12 +42,7 @@
 }
 - (AZPNameAndPasswrd *)nameAndPasswordView{
     if(!_nameAndPasswordView){
-        if(self.phoneRegiestType == PhoneRegiest){
-        _nameAndPasswordView = [AZPNameAndPasswrd loadViewWithPasswordContent:@"密码(至少6位数字或字母)" forgetBtnWidthConstant:0.f];
-        }
-        if(self.phoneRegiestType == PhoneLogin){
-            _nameAndPasswordView = [AZPNameAndPasswrd loadViewWithPasswordContent:@"请输入密码" forgetBtnWidthConstant:75.f];
-        }
+        _nameAndPasswordView = [AZPNameAndPasswrd loadView];
     }
     return _nameAndPasswordView;
 }
@@ -59,14 +50,15 @@
     [super awakeFromNib];
     [self initUI];
     [self subviewsFuction];
+    [self.contentScrollerView addSubview:self.nameAndPasswordView];
+    [self.contentScrollerView addSubview:self.regiestCodeView];
+    
+    self.nameAndPasswordView.frame = CGRectMake(0, 0, kScreenWidth-50, 150);
+    self.regiestCodeView.frame = CGRectMake(kScreenWidth-50, 0, kScreenWidth-50, 150);
 }
 - (void)layoutSubviews{
     [super layoutSubviews];
-    [self.contentScrollerView addSubview:self.nameAndPasswordView];
-    [self.contentScrollerView addSubview:self.regiestCodeView];
-
-    self.nameAndPasswordView.frame = CGRectMake(0, 0, kScreenWidth-50, 150);
-    self.regiestCodeView.frame = CGRectMake(kScreenWidth-50, 0, kScreenWidth-50, 150);
+ 
     if(self.phoneRegiestType == PhoneRegiest){
         if(self.contentScrollerView.contentOffset.x == 0){
             [self.regiestCode setTitle:@"获取验证码" forState:UIControlStateNormal];
@@ -111,9 +103,11 @@
                     [[[UIAlertView alloc]initWithTitle:@"提示" message:infoStr delegate:self cancelButtonTitle:nil otherButtonTitles:@"好的", nil] show];
                 }else{
                     [self.contentScrollerView setContentOffset:CGPointMake(kScreenWidth-50, 0) animated:YES];
+                    
                     [self.scrollerOffsetSignal sendNext:@(NO)];
                     //开启倒计时
                     [self.regiestCodeView timeCountDownWithPhoneNum:self.username];
+                    
                 }
             }];
         }
@@ -136,14 +130,15 @@
                 user.password = self.password;
                 [AZPUser setUserSigle:[RACSignal createSignal:^RACDisposable * _Nullable(id<RACSubscriber>  _Nonnull subscriber) {
                     [subscriber sendNext:user];
-                    [[[UIAlertView alloc]initWithTitle:@"提示" message:@"注册完成，请登录！" delegate:self cancelButtonTitle:nil otherButtonTitles:@"好的", nil] show];
-                    [[[AZPUser getCurrentUserCommand]execute:nil]subscribeNext:^(id  _Nullable x) {
-                        NSArray * users  = (NSArray *)x;
-                        for (User *user in users) {
-                           NSLog(@"x = %@ ,= %@",user.userName,user.password);
-                        }
-                   
-                    }];
+                    NSLog(@"x = %@ ,= %@",user.userName,user.password);
+//                    [[[UIAlertView alloc]initWithTitle:@"提示" message:@"注册完成，请登录！" delegate:self cancelButtonTitle:nil otherButtonTitles:@"好的", nil] show];
+//                    [[[AZPUser getCurrentUserCommand]execute:nil]subscribeNext:^(id  _Nullable x) {
+//                        NSArray * users  = (NSArray *)x;
+//                        for (User *user in users) {
+//
+//                        }
+//
+//                    }];
                     return nil;
                 }]];
                 
