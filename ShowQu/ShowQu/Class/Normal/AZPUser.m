@@ -34,7 +34,7 @@ static AZPUser * instace;
        
     }];
 }
-+ ()
+
 + (BOOL) isExist:(NSString *)tableName{
     return [[JQFMDB shareDatabase] jq_isExistTable:tableName];
 }
